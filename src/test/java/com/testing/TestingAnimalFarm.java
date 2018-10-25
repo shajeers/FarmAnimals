@@ -1,8 +1,13 @@
 package com.testing;
 
 import static org.junit.Assert.*;
+
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Test;
 
+import com.animal.farm.FarmAnimals;
 import com.animal.farm.model.Animal;
 import com.animal.farm.model.Bird;
 import com.animal.farm.model.Butterfly;
@@ -102,5 +107,35 @@ public class TestingAnimalFarm {
 		//Now should have butterfly behaviour
 		assertEquals(butterfly.canFly(),true);
 		assertEquals(butterfly.canWalk(),false);
+	}
+	
+	@Test
+	public void testAnimalCount()
+	{
+		List<Animal> animals = Arrays.asList(
+				new Butterfly(),
+				new Cat(),
+				new Dog(),
+				new Duck(),
+				new Chicken(Gender.FEMALE),
+				new Chicken(Gender.MALE),
+				new ClownFish(),
+				new Dolphin(),
+				new Parrot(),
+				new Shark()
+		);
+		
+		//Only Parrot & Duck can fly
+		assertEquals(FarmAnimals.flyingAnimals(animals).size(),2);
+		
+		//Except Fishes, all other Animals can walk
+		assertEquals(FarmAnimals.walkingAnimals(animals).size(),7);
+		
+		//The Birds - chick, rooster,duck & parrot can sing
+		assertEquals(FarmAnimals.singingAnimals(animals).size(),4);
+		
+		//The Fishes - Shark, ClownFish & Dolphin can swim
+		assertEquals(FarmAnimals.swimmingAnimals(animals).size(),3);
+				
 	}	
 }

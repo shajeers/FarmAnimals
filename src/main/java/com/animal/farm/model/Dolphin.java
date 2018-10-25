@@ -8,5 +8,11 @@ public class Dolphin extends Animal implements Swimmable{
 	public String swim() {
 		return "Dolphins Swimming";
 	}
+	
+	@Override
+	public boolean canWalk()
+	{
+		return false;
+	}	
 
 }
