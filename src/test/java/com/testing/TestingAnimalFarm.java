@@ -9,6 +9,7 @@ import com.animal.farm.model.Cat;
 import com.animal.farm.model.Chicken;
 import com.animal.farm.model.ClownFish;
 import com.animal.farm.model.Dog;
+import com.animal.farm.model.Dolphin;
 import com.animal.farm.model.Duck;
 import com.animal.farm.model.Fish;
 import com.animal.farm.model.Gender;
@@ -77,4 +78,11 @@ public class TestingAnimalFarm {
 		assertEquals(clownFish.canSwim(),true);
 		assertNotNull(clownFish.sayJokes());					
 	}	
+	
+	@Test
+	public void testDolphinBehaviour() {
+		Dolphin myDolphin = new Dolphin();
+		assertNotNull(myDolphin.swim());
+	
+	}
 }
