@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import com.animal.farm.model.Animal;
 import com.animal.farm.model.Bird;
+import com.animal.farm.model.Butterfly;
 import com.animal.farm.model.Cat;
 import com.animal.farm.model.Chicken;
 import com.animal.farm.model.ClownFish;
@@ -85,4 +86,21 @@ public class TestingAnimalFarm {
 		assertNotNull(myDolphin.swim());
 	
 	}
+	
+	@Test
+	public void testButterflyBehaviour() {
+		
+		Butterfly butterfly = new Butterfly();
+		
+		//Initially should have caterpillar behaviour
+		assertEquals(butterfly.canFly(),false);
+		assertEquals(butterfly.canWalk(),true);
+		
+		//do metamorphosis
+		butterfly.metamorphosis();
+		
+		//Now should have butterfly behaviour
+		assertEquals(butterfly.canFly(),true);
+		assertEquals(butterfly.canWalk(),false);
+	}	
 }
