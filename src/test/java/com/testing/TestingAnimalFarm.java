@@ -7,10 +7,13 @@ import com.animal.farm.model.Animal;
 import com.animal.farm.model.Bird;
 import com.animal.farm.model.Cat;
 import com.animal.farm.model.Chicken;
+import com.animal.farm.model.ClownFish;
 import com.animal.farm.model.Dog;
 import com.animal.farm.model.Duck;
+import com.animal.farm.model.Fish;
 import com.animal.farm.model.Gender;
 import com.animal.farm.model.Parrot;
+import com.animal.farm.model.Shark;
 
 public class TestingAnimalFarm {
 	
@@ -56,5 +59,22 @@ public class TestingAnimalFarm {
 		Parrot<Animal> myParrot4 = new Parrot<>();
 		myParrot4.setCompanion(new Duck());
 		assertEquals(myParrot4.sound(),"Quack, quack");
+	}
+	
+	@Test
+	public void testFishBehaviour() {
+		
+		Shark myShark = new Shark();		
+		assertEquals(myShark.getSize(),Fish.FishSize.LARGE);
+		assertEquals(myShark.getColor(),Fish.FishColour.GREY);
+		assertEquals(myShark.canWalk(),false);
+		assertEquals(myShark.canSwim(),true);
+		
+		ClownFish clownFish = new ClownFish();		
+		assertEquals(clownFish.getSize(),Fish.FishSize.SMALL);
+		assertEquals(clownFish.getColor(),Fish.FishColour.MULTICOLOR);
+		assertEquals(clownFish.canWalk(),false);
+		assertEquals(clownFish.canSwim(),true);
+		assertNotNull(clownFish.sayJokes());					
 	}	
 }
