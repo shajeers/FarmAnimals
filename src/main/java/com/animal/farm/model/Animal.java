@@ -14,6 +14,28 @@ public abstract class Animal {
 		return false;
 	}
 
+	public boolean canSwim()
+	{
+		return false;
+	}
+	
+	public boolean canMakeSound()
+	{
+		return true;
+	}
+	
+	public String sound()
+	{
+		if(canMakeSound())
+		{
+			return "Animal Sound";
+		}
+		else
+		{
+			return NOT_SUPPORTED;
+		}
+	}
+	
 	public String walk()
 	{
 		if(canWalk())
