@@ -36,6 +36,18 @@ public abstract class Animal {
 		}
 	}
 	
+	public String soundSecondLang()
+	{
+		if(canMakeSound())
+		{
+			return "Mrigham Ocha";
+		}
+		else
+		{
+			return NOT_SUPPORTED;
+		}
+	}
+	
 	public String walk()
 	{
 		if(canWalk())

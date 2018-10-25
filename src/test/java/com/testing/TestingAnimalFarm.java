@@ -137,5 +137,15 @@ public class TestingAnimalFarm {
 		//The Fishes - Shark, ClownFish & Dolphin can swim
 		assertEquals(FarmAnimals.swimmingAnimals(animals).size(),3);
 				
-	}	
+	}
+	
+	@Test
+	public void testSecondLang()
+	{
+		Chicken myRooster = new Chicken(Gender.MALE);		
+		assertEquals(myRooster.sound(),"Cock-a-doodle-doo");
+		assertEquals(myRooster.soundSecondLang(),"Kokkara Koooo");
+		
+	}
+	
 }

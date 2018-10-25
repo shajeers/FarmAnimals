@@ -26,5 +26,18 @@ public class Chicken extends Bird{
 			return "Cluck, cluck";
 		}
 	}
+	
+	@Override
+	public String soundSecondLang()
+	{
+		if(gender.equals(Gender.MALE))
+		{
+			return "Kokkara Koooo";
+		}
+		else
+		{
+			return "BuckBuck";
+		}
+	}
 
 }
